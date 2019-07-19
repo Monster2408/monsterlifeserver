@@ -1,0 +1,27 @@
+#     - - - - - - - - Gamemode.sk - - - - - - - -
+#     /gm と実行するとゲームモードを順に更新していきます。
+#     /gm <Gamemode> と実行するとその<Gamemode>に変更します。
+#     Permissionは一切設定されておらずだれでもゲームモードを変更可能。
+#     - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+command /gm [<text>]:
+    if arg-1 is set:
+        if arg-1 is "creative" or "c":
+            set player's gamemode to creative
+        if arg-1 is "survival" or "s":
+            set player's gamemode to survival
+        if arg-1 is "spectator" or "sp":
+            set player's gamemode to spectator
+        if arg-1 is "adventure" or "a":
+            set player's gamemode to creative
+    if arg-1 is not set:
+        if player's gamemode is creative:
+            set player's gamemode to adventure
+        if player's gamemode is adventure:
+            set player's gamemode to survival
+        if player's gamemode is survival:
+            set player's gamemode to spectator
+        if player's gamemode is spectator:
+            set player's gamemode to creative
