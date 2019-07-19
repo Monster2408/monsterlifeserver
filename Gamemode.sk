@@ -24,4 +24,4 @@ command /gm [<text>]:
         if player's gamemode is survival:
             set player's gamemode to spectator
         if player's gamemode is spectator:
-            set player's gamemode to creative
+            set player's gamemode to creative# gamemode_sk_no_permission
